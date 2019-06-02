@@ -74,11 +74,11 @@
         </v-layout>
       </v-container>
     </section>
-    <section id="map" >
+    <!-- <section id="map" >
       <v-container>
         <google-map />
       </v-container>
-    </section>
+    </section> -->
     <div>
       <v-btn class="btnGoHome" fab small flat outline color="cyan" @click="goToTC()"><v-icon color="cyan">fas fa-angle-double-up</v-icon></v-btn>
     </div>
@@ -86,14 +86,14 @@
 </template>
 <script>
 import Slider from './Carousel.vue'
-import GoogleMap from './GoogleMap.vue'
+// import GoogleMap from './GoogleMap.vue'
 import { Carousel, Slide } from 'vue-carousel';
 export default {
   components: {
      Slider,
     Carousel,
     Slide,
-    GoogleMap
+    // GoogleMap
   },
   data() {
     return {
