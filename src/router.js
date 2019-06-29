@@ -22,6 +22,8 @@ import danhSachPhong from './views/core/Client/DanhSachPhong.vue'
 import bookPhong from './views/core/Client/BookPhong.vue'
 import ActiveBooking from './views/core/Client/ActiveBooking.vue'
 import ActiveAccount from './views/core/Admin/ActiveAccount.vue'
+import ResetPassWord from './modules/User/components/ResetPass.vue'
+import ErrorPage from './views/core/Client/Error.vue'
 Vue.use(Router)
 
 export default new Router({
@@ -46,6 +48,11 @@ export default new Router({
       component: Page404
     },
     { 
+      path:'/error.html',
+      name:'error',
+      component: ErrorPage
+    },
+    { 
       path:'/success',
       name:'success',
       component: PageSuccess
@@ -58,7 +65,13 @@ export default new Router({
     {
       path: '/kich-hoat-tai-khoan-:id.html',
       name: 'ActiveAccount',
-      component: ActiveAccount
+      component: ActiveAccount,
+    },
+    {
+      path: '/doi-mat-khau-:id.html',
+      name: 'ResetPass',
+      component: ResetPassWord,
+      beforeEnter: Authenticated.checkTimeOut
     },
     {
       path: '/admin',

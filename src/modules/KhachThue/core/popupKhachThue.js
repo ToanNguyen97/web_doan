@@ -62,6 +62,12 @@ export default {
         validate.required,
         validate.email
       ],
+      gioiTinhRules: [
+        v => (v === false || v === true) || 'Không được để trống'
+      ],
+      nguoiThanRules: [
+        validate.required
+      ],
       uploadingPhoto: false,
       srcAnhDaiDien: null
     }
@@ -78,8 +84,8 @@ export default {
     },
   },
   methods: {
-    Huy () {    
-      this.$refs.form.reset()
+    Huy () {
+      this.$refs.form.resetValidation()
       this.anhDaiDien = `//localhost:3003/image/avatar.png`
       this.image = null
       this.changeAnh = false
@@ -110,6 +116,7 @@ export default {
         if(this.image != "")
         {
           let anhDaiDien = {name: this.image, file64: this.anhDaiDien}
+          console.log('anh', this.anhDaiDien)
           this.formData.anhDaiDien = anhDaiDien
         }
         else
@@ -143,6 +150,7 @@ export default {
     value (v) {
       if(v) {
         this.$store.dispatch('getLoaiKhachs')
+        this.formData.gioiTinh = true
       }
       if (v && this.isThem === false) {
         if (this.khachThueSelect && this.khachThueSelect._id) {
@@ -150,11 +158,12 @@ export default {
           if (this.formData && this.formData.ngaySinh){
             this.formData.ngaySinh = new Date(this.formData.ngaySinh).toISOString().substr(0, 10)
           }
+          console.log('form', this.formData)
         }
       }
       else
       {
-        this.formData = {}
+        this.formData.gioiTinh = true
       }
     },
     'formData':'getSrcAnhDaiDien',

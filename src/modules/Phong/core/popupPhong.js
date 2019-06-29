@@ -84,7 +84,7 @@ export default {
   },
   methods: {
     Huy () {    
-      this.$refs.form.reset()
+      this.$refs.form.resetValidation()
       this.anhChinh = null
       this.anhChiTiet = []
       this.image = null
@@ -127,7 +127,6 @@ export default {
         this.changeAnhMulti = true
       }
       this.$refs['multifile'].click()
-      console.log('chon multi file ne')
     },
     choosedFileMulti () {
        const files = this.$refs['multifile'].files
