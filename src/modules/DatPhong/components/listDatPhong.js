@@ -89,8 +89,8 @@ export default {
     }
   },
   methods: {
-    ResetPage () {
-      this.search = ''
+   async ResetPage () {
+      this.dsKhachDatPhong = await datPhongServices.listKhachDatPhong()
     },
     async BookPhong (item) {
       let formData = {
@@ -105,8 +105,7 @@ export default {
         if( res && res._id) {
           this.khachSelect = item
           this.soDT = res.soDienThoai
-          
-          console.log(this.soDT)
+          item.status = false // chống cháy, sẽ phát triển sau
           this.phongSelect = item.phongID
           this.openHopDong = true
         } else {

@@ -1,12 +1,18 @@
 import moment from 'moment'
 import toast from '../../../plugins/toast.js'
+import Skeleton from '../../../views/core/Client/Skeleton.vue'
 export default {
+  components: {
+    Skeleton
+  },
   data() {
     return {
       phong: {},
       search: '',
       pagination: {
-        rowsPerPage:3
+        rowsPerPage:3,
+        sortBy: 'ngayLap',
+        'descending': true
       },
       rating:4,
       tongTien: 0,
