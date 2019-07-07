@@ -4,6 +4,9 @@ const email = v => /.+@.+/.test(v) || 'Không đúng định dạng mail'
 const max20 = v =>  {
  return  (v && v.length <= 20) ||  ` tối đa 20 ký tự`
 }
+const max6 = v =>  {
+ return  (v && v.length <= 6) ||  `chỉ số tối đa là 999999`
+}
 const max10 = v =>  {
  return  (v && v.length <= 10) ||  ` tối đa 10 ký tự`
 }
@@ -29,5 +32,6 @@ export default {
   max13,
   max30,
   max40,
-  max100
+  max100,
+  max6
 }

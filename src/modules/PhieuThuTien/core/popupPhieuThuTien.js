@@ -24,11 +24,13 @@ export default {
       loading: false,
       soDienMoiRules: [
         validate.required,
-        v => (v && v > this.formData.soDien) || 'Giá trị điện phải lớn hơn số cũ'
+        v => (v && v > this.formData.soDien) || 'Giá trị điện phải lớn hơn số cũ',
+        validate.max6
       ],
       soNuocMoiRules: [
         validate.required,
-        v => (v && v > this.formData.soNuoc) || 'Giá trị nước phải lớn hơn số cũ'
+        v => (v && v > this.formData.soNuoc) || 'Giá trị nước phải lớn hơn số cũ',
+        validate.max6
       ],
     }
   },

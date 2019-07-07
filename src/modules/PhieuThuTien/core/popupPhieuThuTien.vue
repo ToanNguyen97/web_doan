@@ -20,9 +20,9 @@
                     <v-flex xs12 sm6 md9>
                       <v-text-field outline readonly hide-details label="Tên phòng" v-model="phieuThuTienSelect.tenPhong"></v-text-field>      
                       <v-text-field style="padding-bottom:4px" readonly hide-details label="Số điện cũ" :value="formData.soDien" append-icon="fas fa-bolt"></v-text-field>    
-                      <v-text-field style="padding-bottom:4px"  type="number"  required :rules="soDienMoiRules" label="Số điện mới" v-model="formData.soDienMoi" append-icon="fas fa-bolt"></v-text-field>    
+                      <v-text-field style="padding-bottom:4px"  type="number"  required :counter="6" :rules="soDienMoiRules" label="Số điện mới" v-model="formData.soDienMoi" append-icon="fas fa-bolt"></v-text-field>    
                       <v-text-field style="padding-bottom:4px"  readonly hide-details label="Số nước cũ" :value="formData.soNuoc" append-icon="fas fa-tint"></v-text-field>       
-                      <v-text-field style="padding-bottom:4px" type="number" required :rules="soNuocMoiRules"  label="Số nước mới" v-model="formData.soNuocMoi" append-icon="fas fa-tint"></v-text-field>       
+                      <v-text-field style="padding-bottom:4px" type="number" required :counter="6" :rules="soNuocMoiRules"  label="Số nước mới" v-model="formData.soNuocMoi" append-icon="fas fa-tint"></v-text-field>       
                       <v-textarea style="padding-bottom:4px"   hide-details label="Nhắc nhở" v-model="formData.moTa" placeholder="Một số lưu ý" ></v-textarea>       
                     </v-flex>
                   </v-layout>
